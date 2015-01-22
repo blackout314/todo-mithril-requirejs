@@ -3,11 +3,12 @@
 
 // module loader helper
 var asyncModule = function(name) {
+	var path = 'js/controllers/';
     return {
         controller: function() {
             m.startComputation()
 
-            require(['js/controllers/'+name], function(module) {
+            require([path+name], function(module) {
                 this.controller = new module.controller()
                 this.view = module.view
 
